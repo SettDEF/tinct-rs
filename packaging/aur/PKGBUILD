@@ -1,0 +1,21 @@
+# Maintainer: SettDEF <Timomix13@gmail.com>
+# AUR package for the prebuilt tinct binary. To publish:
+#   1. updpkgsums && makepkg --printsrcinfo > .SRCINFO
+#   2. git clone ssh://aur@aur.archlinux.org/tinct-bin.git && copy these in && push
+pkgname=tinct-bin
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Image → Material You theming engine: palette extraction, terminal harmonization, transforms, template rendering"
+arch=('x86_64' 'aarch64')
+url="https://github.com/SettDEF/tinct-rs"
+license=('MIT')
+provides=('tinct')
+conflicts=('tinct')
+source_x86_64=("$pkgname-$pkgver-x86_64.tar.gz::$url/releases/download/v$pkgver/tinct-x86_64-unknown-linux-musl.tar.gz")
+source_aarch64=("$pkgname-$pkgver-aarch64.tar.gz::$url/releases/download/v$pkgver/tinct-aarch64-unknown-linux-musl.tar.gz")
+sha256sums_x86_64=('SKIP')
+sha256sums_aarch64=('SKIP')
+
+package() {
+    install -Dm755 tinct "$pkgdir/usr/bin/tinct"
+}
