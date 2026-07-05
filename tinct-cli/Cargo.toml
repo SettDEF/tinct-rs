@@ -1,0 +1,21 @@
+[package]
+name = "tinct-rs-cli"
+version = "0.1.0"
+edition = "2021"
+
+description = "CLI for tinct: image/color → Material You palettes, transforms and template rendering"
+license = "MIT"
+repository = "https://github.com/SettDEF/tinct-rs"
+
+[dependencies]
+anyhow = "1.0.103"
+clap = { version = "4.6.1", features = ["derive"] }
+image = { version = "0.25.10", default-features = false, features = ["png", "jpeg", "gif", "webp"] }
+material-colors = "0.4.2"
+serde_json = { version = "1.0.150", features = ["preserve_order"] }
+tinct = { package = "tinct-rs", path = "../tinct", version = "0.1.0" }
+toml = "1.1.2"
+
+[[bin]]
+name = "tinct"
+path = "src/main.rs"

@@ -1,0 +1,24 @@
+[package]
+name = "tinct-rs"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.77.2"
+description = "Image/color → Material You palette engine: extraction, schemes, terminal harmonization, palette transforms"
+license = "MIT"
+
+repository = "https://github.com/SettDEF/tinct-rs"
+keywords = ["material-you", "color", "theming", "wallpaper", "palette"]
+categories = ["command-line-utilities", "multimedia::images"]
+
+[lib]
+name = "tinct"
+
+[dependencies]
+material-colors = { version = "0.4.2" }
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "gif", "webp"], optional = true }
+serde = { version = "1.0", features = ["derive"], optional = true }
+
+[features]
+default = ["image-decode", "serde"]
+image-decode = ["dep:image"]
+serde = ["dep:serde"]
