@@ -77,7 +77,7 @@ let accent = palette.get("primary");
 tinct = { package = "tinct-rs", version = "0.1" }
 ```
 
-MSRV of the core crate: 1.77.2.
+MSRV of the core crate: 1.85.
 
 ## Repository layout
 

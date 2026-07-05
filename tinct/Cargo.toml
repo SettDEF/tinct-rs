@@ -2,7 +2,7 @@
 name = "tinct-rs"
 version = "0.1.0"
 edition = "2021"
-rust-version = "1.77.2"
+rust-version = "1.85.0"
 description = "Image/color → Material You palette engine: extraction, schemes, terminal harmonization, palette transforms"
 license = "MIT"
 
